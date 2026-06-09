@@ -1,0 +1,24 @@
+Package: REDCapExtractR
+Title: Extract REDCap data using API for use in R
+Version: 0.0.0.9000
+Authors@R: 
+    person("James", "Totterdell", , "jatotterdell@gmail.com", role = c("aut", "cre"))
+Description: Extract REDCap data into and R session, and optionally write to a database.
+    The aim is consistency rather than flexibility for the API requests.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends:
+    R (>= 4.1.0)
+Imports: 
+    cli,
+    dplyr,
+    httr2,
+    labelled,
+    purrr,
+    readr,
+    rlang
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
