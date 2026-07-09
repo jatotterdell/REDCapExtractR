@@ -1,0 +1,9 @@
+^LICENSE\.md$
+^[.]?air[.]toml$
+^\.vscode$
+^README\.Rmd$
+
+scratch.R
+R/checkbox.R
+R/redcap-helpers.R
+R/redcap-labels.R
