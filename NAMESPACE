@@ -2,12 +2,7 @@
 
 S3method(print,redcap_bundle)
 S3method(print,redcap_client)
-export(apply_redcap_form_labels)
-export(build_redcap_form_col_types)
-export(convert_redcap_form_types)
+export(export_redcap)
 export(fetch_redcap_bundle)
-export(get_value_labels)
-export(get_variable_labels)
-export(parse_redcap_choices)
 export(redcap_client)
 export(save_redcap_bundle)

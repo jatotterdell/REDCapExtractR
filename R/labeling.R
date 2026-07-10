@@ -11,7 +11,6 @@ strip_html_tags <- function(x) {
 #'
 #' @return A named character vector where names are codes and values are labels,
 #'   or `NULL` if no choices are present.
-#' @export
 parse_redcap_choices <- function(x) {
   if (length(x) != 1 || is.na(x) || x == "") {
     return(NULL)
@@ -83,7 +82,6 @@ get_value_labels_dictionary <- function(metadata) {
 #' @param metadata REDCap metadata tibble.
 #'
 #' @return Named character vector of variable labels.
-#' @export
 get_variable_labels <- function(metadata) {
   metadata |>
     dplyr::filter(!(field_type %in% c("descriptive", "checkbox"))) |>
@@ -98,7 +96,6 @@ get_variable_labels <- function(metadata) {
 #' @param metadata REDCap metadata tibble.
 #'
 #' @return Named list of value label vectors.
-#' @export
 get_value_labels <- function(data, value_labels_dict) {
   value_labels_dict |>
     dplyr::filter(field_name %in% colnames(data)) |>
@@ -125,7 +122,6 @@ get_value_labels <- function(data, value_labels_dict) {
 #' @param checkbox_sep Separator when collapsing checkbox selections.
 #'
 #' @return A labelled data frame.
-#' @export
 apply_redcap_form_labels <- function(
   data,
   metadata,

@@ -199,6 +199,7 @@ export_records <- function(
 #' @param raw_or_label Export 'raw' or 'label' data from REDCap.
 #'
 #' @return A list of REDCap data.
+#' @export
 export_redcap <- function(client, raw_or_label = "raw") {
   project <- export_project_info(client)
   field_names <- export_field_names(client)

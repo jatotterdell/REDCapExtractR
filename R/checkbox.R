@@ -3,7 +3,6 @@
 #' @param metadata REDCap metadata tibble.
 #'
 #' @return A tibble mapping checkbox parent fields to child columns and labels.
-#' @export
 get_checkbox_dictionary <- function(metadata) {
   checkbox_meta <- metadata |>
     dplyr::filter(field_type == "checkbox") |>
@@ -59,7 +58,6 @@ get_checkbox_dictionary <- function(metadata) {
 #' @param x Choice code.
 #'
 #' @return Character vector of normalised suffixes.
-#' @export
 redcap_checkbox_suffix <- function(x) {
   x |>
     stringr::str_replace_all("[^A-Za-z0-9]", "_") |>
@@ -73,7 +71,6 @@ redcap_checkbox_suffix <- function(x) {
 #' @param checkbox_dict Checkbox dictionary from `get_checkbox_dictionary()`.
 #'
 #' @return Modified data frame.
-#' @export
 coerce_checkbox_columns <- function(data, checkbox_dict) {
   cols <- intersect(checkbox_dict$checkbox_column, names(data))
 
@@ -104,7 +101,6 @@ coerce_checkbox_columns <- function(data, checkbox_dict) {
 #' @param metadata REDCap metadata.
 #'
 #' @return Modified labelled data frame.
-#' @export
 label_checkbox_columns <- function(data, metadata) {
   checkbox_dict <- get_checkbox_dictionary(metadata)
 
@@ -142,7 +138,6 @@ label_checkbox_columns <- function(data, metadata) {
 #' @param keep_checkbox_columns If `TRUE`, keep the original checkbox child columns.
 #'
 #' @return Modified data frame.
-#' @export
 collapse_checkbox_fields <- function(data, metadata, sep = "; ", keep_checkbox_columns = TRUE) {
   checkbox_dict <- get_checkbox_dictionary(metadata)
 

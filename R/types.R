@@ -76,7 +76,6 @@ redcap_collector <- function(field_type, validation = NA_character_) {
 #' @param form_field_names The REDCap form fields
 #'
 #' @return A readr cols specification.
-#' @export
 build_redcap_form_col_types <- function(field_metadata, form_field_names) {
   field_metadata <- field_metadata |>
     filter(export_field_name %in% form_field_names)
@@ -129,7 +128,6 @@ build_redcap_form_col_types <- function(field_metadata, form_field_names) {
 #' @param na Character vector of strings to treat as missing.
 #'
 #' @return A typed tibble.
-#' @export
 convert_redcap_form_types <- function(data, field_metadata, na = c("", "NA", "UNK")) {
   col_types <- build_redcap_form_col_types(
     field_metadata = field_metadata,
